@@ -1,5 +1,8 @@
 # eXo Platform Docker image <!-- omit in toc -->
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+
+
 ![Docker Stars](https://img.shields.io/docker/stars/exoplatform/exo.svg) - ![Docker Pulls](https://img.shields.io/docker/pulls/exoplatform/exo.svg)
 
 | Image                                                       | JDK | eXo Platform             |
