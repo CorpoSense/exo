@@ -1,7 +1,6 @@
-# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: docker build -t exo:6.3 .' # runs during prebuild
-    command: docker run -e EXO_DB_PASSWORD=admin exo:1.0
+  - init: docker build -t exoplatform/exo . # runs during prebuild (This will produce an image with the current eXo Platform enterprise version and 3 bundled add-ons : eXo Chat, eXo Tasks, eXo Remote Edit.)
+    command: docker run -e EXO_DB_PASSWORD=admin exoplatform/exo
 
 ports:
   - port: 3306
