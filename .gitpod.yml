@@ -1,3 +1,6 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
   - init: docker build -t exoplatform/exo . # runs during prebuild (This will produce an image with the current eXo Platform enterprise version and 3 bundled add-ons : eXo Chat, eXo Tasks, eXo Remote Edit.)
     command: docker run -e EXO_DB_PASSWORD=admin exoplatform/exo
