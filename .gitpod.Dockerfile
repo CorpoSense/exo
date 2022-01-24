@@ -1,6 +1,6 @@
 FROM gitpod/workspace-mysql
 
-USER gitpod
+#USER gitpod
 
 # Environment Variables
 #EXO_DB_PASSWORD=exo
