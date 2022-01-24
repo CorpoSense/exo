@@ -3,7 +3,12 @@ image:
 
 tasks:
   - init: docker build -t exoplatform/exo . # runs during prebuild (This will produce an image with the current eXo Platform enterprise version and 3 bundled add-ons : eXo Chat, eXo Tasks, eXo Remote Edit.)
-    command: docker run -e EXO_DB_PASSWORD=admin exoplatform/exo
+    command: |
+      mysql -e "CREATE USER 'exo'@'localhost' IDENTIFIED BY 'exo';"
+      mysql -e "GRANT ALL PRIVILEGES ON * . * TO 'exo'@'localhost';"
+      mysql -e "FLUSH PRIVILEGES;"
+  - command: docker run -e EXO_DB_PASSWORD=exo -e EXO_DB_USER=exo -e EXO_DB_PORT=33060 -e EXO_DB_NAME=exo exoplatform/exo
+  - command: gp await-port 8080 && gp preview $(gp url 8080)
 
 ports:
   - port: 3306
